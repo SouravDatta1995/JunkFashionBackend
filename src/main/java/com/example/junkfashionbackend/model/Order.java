@@ -7,12 +7,12 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.stereotype.Component;
 
 import java.math.BigInteger;
-import java.util.Date;
-import java.util.List;
+import java.time.LocalDateTime;
+
 
 @Component
 @Document(collection = "order")
-public @Data  class Order {
+public @Data class Order {
     @Id
     BigInteger id;
     @DBRef
@@ -21,5 +21,7 @@ public @Data  class Order {
     private Product product;
     private int productCount;
     private double sellingPrice;
-    private Date orderDate;
+    private LocalDateTime orderDate;
+    private String orderState;
+
 }
