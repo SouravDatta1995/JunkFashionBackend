@@ -14,4 +14,6 @@ public interface CustomerRepository extends MongoRepository<Customer, BigInteger
 
 
     List<Customer> findTop5CustomersByCustomerPhoneContainingOrCustomerNameContainingIgnoreCase(String customerPhone, String customerName);
+
+    Customer findCustomerByCustomerPhone(String customerPhone);
 }
